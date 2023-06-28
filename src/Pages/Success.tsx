@@ -8,7 +8,6 @@ import bigOutro from '../Assets/imagens/bigOutro.png'
 import smallOutro from '../Assets/imagens/smallOutro.png'
 
 export default function Success() {
-    const [selectedMoviesId, setSelectedMoviesId] = useContext(Context);
     const navigate = useNavigate();
     return (
         <>

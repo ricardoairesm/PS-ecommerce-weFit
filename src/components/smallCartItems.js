@@ -8,7 +8,7 @@ import { contarElemento, removerPrimeiraOcorrencia, arrangeById } from '../utils
 import SmallCartFooter from './smallCartFooter'
 
 export function SmallCartItems() {
-    const [selectedMoviesId, setSelectedMoviesId, movieList] = useContext(Context);
+    const { selectedMoviesId, setSelectedMoviesId, movieList } = useContext(Context);
     if (selectedMoviesId.length > 0 && movieList) {
         const incomingInfoArr = [...selectedMoviesId];
         const organizedArr = arrangeById(movieList);

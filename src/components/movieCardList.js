@@ -4,12 +4,12 @@ import Context from '../Pages/Context'
 import MovieCard from './movieCard'
 
 export default function MovieCards() {
-    const [selectedMoviesId, setSelectedMoviesId, movieList] = useContext(Context);
+    const [selectedMoviesId, setSelectedMoviesId, movieList]  = useContext(Context);
     return (
         <CardList>
             {
                 movieList && movieList.map((movie, index) => (
-                    <MovieCard key = {index} movie={movie} index={index} />
+                    <MovieCard key={index} movie={movie} index={index} />
                 ))}
         </CardList>
     )

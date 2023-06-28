@@ -8,7 +8,7 @@ import Context from './Pages/Context'
 import { useMovies } from './Hooks/useMovies'
 
 const App = () => {
-  const [selectedMoviesId, setSelectedMoviesId] = useState()
+  const [selectedMoviesId, setSelectedMoviesId] = useState([])
   const { movieList, getAll } = useMovies()
   useEffect(() => {
     getAll()

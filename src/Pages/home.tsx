@@ -1,12 +1,16 @@
 import styled from 'styled-components'
 import DefaultHeader from '../components/defaultHeader'
 import MovieCards from '../components/movieCardList'
+import Oval from 'react-loader-spinner'
+import { useContext } from 'react';
+import Context from './Context';
 
 export default function Home() {
+    const  [selectedMoviesId, setSelectedMoviesId, movieList] = useContext(Context);
     return (
         <DefaultBackground>
             <DefaultHeader />
-            <MovieCards />
+            {movieList ? <MovieCards /> : <Oval height={80} width={80} color="black" visible={true} secondaryColor="white" type={'Oval'} />}
         </DefaultBackground>
     )
 }

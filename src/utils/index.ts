@@ -37,4 +37,18 @@ export function calculateSum(array) {
 
 export function removeArrayMember(array, member) {
     return array.filter(item => item !== member);
-  }
+}
+
+export function getTotalPrice(arr1, arr2) {
+    const prices = []
+    for (let i = 0; i < arr1.length; i++) {
+        let id = Number(arr1[i]);
+        for (let j = 0; j < arr2.length; j++) {
+            const movie = arr2[j];
+            if (id === movie.id) {
+                prices.push(movie.price);
+            }
+        }
+    }
+    return calculateSum(prices);
+}

@@ -2,25 +2,13 @@ import styled from 'styled-components'
 import { useContext } from 'react'
 import Context from '../Pages/Context'
 import { useNavigate } from 'react-router-dom'
-import { calculateSum } from '../utils'
+import { getTotalPrice } from '../utils'
 
 export default function CartFooter() {
-    const [selectedMoviesId, setSelectedMoviesId, movieList] = useContext(Context);
+    const [selectedMoviesId, setSelectedMoviesId, movieList]  = useContext(Context);
     const navigate = useNavigate();
     if (selectedMoviesId && movieList) {
-        const prices = []
-        function getTotalPrice() {
-            for (let i = 0; i < selectedMoviesId.length; i++) {
-                let id = Number(selectedMoviesId[i]);
-                for (let j = 0; j < movieList.length; j++) {
-                    const movie = movieList[j];
-                    if (id === movie.id) {
-                        prices.push(movie.price);
-                    }
-                }
-            }
-            return calculateSum(prices);
-        }
+        const totalPrice = getTotalPrice(selectedMoviesId, movieList)
         return (
             <>
                 <Background>
@@ -34,7 +22,7 @@ export default function CartFooter() {
                             }}  >FINALIZAR PEDIDO</Button>
                         <FinalPrice>
                             <h1>TOTAL</h1>
-                            <h2>R$ {getTotalPrice().toFixed(2)}</h2>
+                            <h2>R$ {totalPrice.toFixed(2)}</h2>
                         </FinalPrice>
                     </Footer >
                 </Background>

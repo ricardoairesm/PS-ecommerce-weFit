@@ -41,7 +41,7 @@ export function CartItems() {
                 {
                     movieList && movieInfoArr.map((item, index) => (
                         <Items key={index}>
-                            <img alt = {'no image'} src={item.movie.image} width={'89px'} height={'114px'} />
+                            <img alt={'no image'} src={item.movie.image} width={'89px'} height={'114px'} />
                             <TitlePrice>
                                 <h1>{item.movie.title}</h1>
                                 <h2>R$ {item.movie.price}</h2>
