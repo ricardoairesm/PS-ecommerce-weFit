@@ -41,7 +41,10 @@ export function SmallCartItems() {
                                 <TitlePriceExclude>
                                     <h1>{item.movie.title}</h1>
                                     <h2>R$ {item.movie.price}</h2>
-                                    <img alt='no image' src={lixeira} />
+                                    <img alt='no image' src={lixeira} onClick={() => {
+                                        let arr = removeArrayMember(incomingInfoArr, '' + item.movie.id);
+                                        setSelectedMoviesId(arr)
+                                    }} />
                                 </TitlePriceExclude>
                                 <CounterSubTotal>
                                     <img alt='no image' src={minus} onClick={() => {
